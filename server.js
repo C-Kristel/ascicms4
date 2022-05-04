@@ -23,7 +23,7 @@ dotenv.config();
 mongoose.connect(process.env.DB_connection, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
-	useCreateIndex: true
+	//useCreateIndex: true
 })
 
 //app.use('/', express.static(path.join(__dirname, 'static')))
