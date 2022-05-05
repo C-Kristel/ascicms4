@@ -83,7 +83,7 @@ router.patch('/update/:id', async (req, res) => {
 
     //UPDATING CONTACT
     try {
-        const patch = await Plants.updateOne({
+        const patch = await Params.updateOne({
             _id: req.params.id
         }, {
             $set: {
