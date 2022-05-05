@@ -13,6 +13,8 @@ const app = express();
 //Connect to DB
 require('./initDB')();
 
+const port = process.env.PORT || 8080;
+
 //routes
 const UserRoute = require('./routes/User');
 const chRoute = require('./routes/CH_status');
@@ -22,12 +24,6 @@ const peltierStatus = require('./routes/peltier');
 const vent = require('./routes/vent');
 const waterPump = require('./routes/waterPump');
 dotenv.config();
-
-/*mongoose.connect(process.env.DB_connection, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	//useCreateIndex: true
-}) */
 
 //app.use('/', express.static(path.join(__dirname, 'static')))
 
@@ -45,6 +41,6 @@ app.use('/vent', vent);
 app.use('/wp', waterPump);
 app.use(bodyParser.json())
 
-app.listen(8080, () => {
-	console.log('Server up at 8080')
-})
+app.listen(port, () => {
+    console.log('Server is running [', port, ']');
+});
