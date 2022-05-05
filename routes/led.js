@@ -1,7 +1,16 @@
 const router = require('express').Router();
 const led = require('../model/led')
 
+//Get all routes
+router.get('/all', async (req, res) => {
+    const findLedStatus = await led.find()
+    if (findLedStatus != 0) {
+        res.json(findLedStatus);
+    } else {
+        return res.status(400).json({ 'error': 'DB is empty' });
+    }
 
+});
 // LED1
 router.post('/api/led1', async (req, res) => {
 	const { ledStatus, ledNum } = req.body

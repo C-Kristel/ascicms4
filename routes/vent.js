@@ -1,6 +1,16 @@
 const router = require('express').Router();
 const vent = require('../model/vent')
 
+//Get all routes
+router.get('/all', async (req, res) => {
+    const findVentStatus = await vent.find()
+    if (findVentStatus != 0) {
+        res.json(findVentStatus);
+    } else {
+        return res.status(400).json({ 'error': 'DB is empty' });
+    }
+
+});
 
 // Vent1
 router.post('/api/vent1', async (req, res) => {

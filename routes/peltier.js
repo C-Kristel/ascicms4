@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const peltier = require('../model/peltier')
 
+//Get all routes
+router.get('/all', async (req, res) => {
+    const findPeltiers = await peltier.find()
+    if (findPeltiers != 0) {
+        res.json(findPeltiers);
+    } else {
+        return res.status(400).json({ 'error': 'DB is empty' });
+    }
+});
 
 // Peltier1
 
