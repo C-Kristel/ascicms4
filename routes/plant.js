@@ -65,12 +65,12 @@ router.delete('/delete/:id', async (req, res) => {
     res.json(result);
 });
 
-//Update a Contacts
+//Update a Plant
 router.patch('/update/:id', async (req, res) => {
 
     //CHECK IF CONTACT ALREADY EXIST
     const PlantExist = await Plants.findOne({
-        plantNum: req.body.plantNum
+        plantNum: req.body.plantNum,
         plantHeight: req.body.plantHeight,
         numberOfLeaves: req.body.numberOfLeaves,
         leafGreenness: req.body.leafGreenness,
@@ -86,7 +86,7 @@ router.patch('/update/:id', async (req, res) => {
             _id: req.params.id
         }, {
             $set: {
-                plantNum: req.body.plantNum
+                plantNum: req.body.plantNum,
                 plantHeight: req.body.plantHeight,
                 numberOfLeaves: req.body.numberOfLeaves,
                 leafGreenness: req.body.leafGreenness,
