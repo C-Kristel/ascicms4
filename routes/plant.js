@@ -57,7 +57,7 @@ router.get('/get/:id', async (req, res) => {
     res.json(q);
 });
 
-//Delete Contact
+//Delete Plant
 router.delete('/delete/:id', async (req, res) => {
     const result = await Plants.findByIdAndDelete({
         _id: req.params.id
@@ -68,7 +68,7 @@ router.delete('/delete/:id', async (req, res) => {
 //Update a Plant
 router.patch('/update/:id', async (req, res) => {
 
-    //CHECK IF CONTACT ALREADY EXIST
+    //CHECK IF plant ALREADY EXIST
     const PlantExist = await Plants.findOne({
         plantNum: req.body.plantNum,
         plantHeight: req.body.plantHeight,
@@ -78,9 +78,9 @@ router.patch('/update/:id', async (req, res) => {
             $ne: req.params.id
         }
     });
-    if (contactExist) return res.status(400).json({ 'error': 'Plant Data Already Exists' });
+    if (PlantExist) return res.status(400).json({ 'error': 'Plant Data Already Exists' });
 
-    //UPDATING CONTACT
+    //UPDATING Plant
     try {
         const patch = await Plants.updateOne({
             _id: req.params.id
