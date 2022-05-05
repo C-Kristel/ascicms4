@@ -10,6 +10,9 @@ const dotenv = require('dotenv')
 require('dotenv/config')
 const app = express();
 
+//Connect to DB
+require('./initDB')();
+
 //routes
 const UserRoute = require('./routes/User');
 const chRoute = require('./routes/CH_status');
@@ -20,11 +23,11 @@ const vent = require('./routes/vent');
 const waterPump = require('./routes/waterPump');
 dotenv.config();
 
-mongoose.connect(process.env.DB_connection, {
+/*mongoose.connect(process.env.DB_connection, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	//useCreateIndex: true
-})
+}) */
 
 //app.use('/', express.static(path.join(__dirname, 'static')))
 
