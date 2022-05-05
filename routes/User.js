@@ -41,8 +41,8 @@ router.post('/change-password', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-	const { email, username, password } = req.body
-	const user = await User.findOne({ email, username }).lean() 
+	const { email, password } = req.body
+	const user = await User.findOne({ email }).lean() 
 
 	if (!user) {
 		return res.json({ status: 'error', error: 'Invalid username/password' })
@@ -54,8 +54,7 @@ router.post('/login', async (req, res) => {
 		const token = jwt.sign(
 			{
 				id: user._id,
-				email: user.email,
-				username: user.username
+				email: user.email
 			},
 			JWT_SECRET
 		)
