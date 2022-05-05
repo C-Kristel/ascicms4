@@ -33,7 +33,7 @@ router.post('/change-password', async (req, res) => {
 				$set: { password }
 			}
 		)
-		res.json({ status: 'ok' })
+		res.json({ status: 'ok', message: 'Password Changed' })
 	} catch (error) {
 		console.log(error)
 		res.json({ status: 'error', error: ';))' })
