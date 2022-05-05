@@ -23,6 +23,7 @@ const ledStatus = require('./routes/led');
 const peltierStatus = require('./routes/peltier');
 const vent = require('./routes/vent');
 const waterPump = require('./routes/waterPump');
+const plants = require('./routes/plant');
 dotenv.config();
 
 //app.use('/', express.static(path.join(__dirname, 'static')))
@@ -39,6 +40,7 @@ app.use('/led', ledStatus);
 app.use('/pel', peltierStatus);
 app.use('/vent', vent);
 app.use('/wp', waterPump);
+app.use('/plant', plants);
 app.use(bodyParser.json())
 
 app.listen(port, () => {
