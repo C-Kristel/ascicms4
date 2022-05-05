@@ -55,7 +55,7 @@ router.get('/get/:id', async (req, res) => {
         _id: req.params.id
     });
     res.json(q);
-}); 
+});
 
 //Delete Plant
 router.delete('/delete/:id', async (req, res) => {
@@ -67,6 +67,18 @@ router.delete('/delete/:id', async (req, res) => {
 
 //Update a Plant
 router.patch('/update/:id', async (req, res) => {
+
+    //CHECK IF plant ALREADY EXIST
+    const PlantExist = await Plants.findOne({
+        plantNum: req.body.plantNum,
+        plantHeight: req.body.plantHeight,
+        numberOfLeaves: req.body.numberOfLeaves,
+        leafGreenness: req.body.leafGreenness,
+        _id: {
+            $ne: req.params.id
+        }
+    });
+    if (PlantExist) return res.status(400).json({ 'error': 'Plant Data Already Exists' });
 
     //UPDATING Plant
     try {
@@ -87,5 +99,3 @@ router.patch('/update/:id', async (req, res) => {
 });
 
 module.exports = router;
-
-
