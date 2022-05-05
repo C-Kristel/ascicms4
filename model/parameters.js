@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const ParamsSchema = new mongoose.Schema(
 	{
-		start_time: {type: Ti, required: false},
+		start_time: {type: String, required: false},
         end_time: {type: String, required: false},
         duration: {type: String, required: true},
 		target_temp: {type: String, required: false},
