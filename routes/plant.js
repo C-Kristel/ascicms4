@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Plants = require('../models/plant');
+const Plants = require('../model/plant');
 
 //Get all plant data
 router.get('/all', verify, async (req, res) => {
