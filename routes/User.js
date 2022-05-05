@@ -41,7 +41,7 @@ router.post('/change-password', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-	const { email, password } = req.body
+	const { username, email, password } = req.body
 	const user = await User.findOne({ email }).lean() 
 
 	if (!user) {
