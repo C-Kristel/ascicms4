@@ -104,7 +104,7 @@ router.post('/register', async (req, res) => {
 		throw error
 	}
 
-	res.json({ status: 'ok' })
+	res.json({ status: 'ok', message: 'User Created Successfully' })
 })
 
 //Get specific Contacts
