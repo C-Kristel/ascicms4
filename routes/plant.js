@@ -50,19 +50,12 @@ router.post('/new', async (req, res) => {
 })
 
 //Get specific Plant Data
-/*router.get('/get/:id', async (req, res) => {
+router.get('/get/:id', async (req, res) => {
     const q = await Plants.findById({
         _id: req.params.id
     });
     res.json(q);
-}); */
-
-router.get('/get/:plantNum', async (req, res) => {
-    const z = await Plants.findById({
-        plantNum: req.params.plantNum
-    });
-    res.json(z);
-});
+}); 
 
 //Delete Plant
 router.delete('/delete/:id', async (req, res) => {
