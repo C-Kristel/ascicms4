@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 			JWT_SECRET
 		)
 
-		return res.json({ status: 'ok', data: token, message: 'User logged in successfully'})
+		return res.json({ status: 'ok', "auth-token": token, message: 'User logged in successfully'})
 	}
 
 	res.json({ status: 'error', error: 'Invalid username/password' })
