@@ -13,7 +13,7 @@ router.get('/all', async (req, res) => {
 
 // Peltier1
 
-router.post('/api/pel1', async (req, res) => {
+router.post('/pel1', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -52,7 +52,7 @@ router.post('/api/pel1', async (req, res) => {
 })
 
 //get peltier1 status
-router.get('/api/pel1/get/:id', async (req, res) => {
+router.get('/pel1/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -60,7 +60,7 @@ router.get('/api/pel1/get/:id', async (req, res) => {
 });
 
 //Peltier 2
-router.post('/api/pel2', async (req, res) => {
+router.post('/pel2', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -99,7 +99,7 @@ router.post('/api/pel2', async (req, res) => {
 })
 
 //get peltier2 status
-router.get('/api/pel2/get/:id', async (req, res) => {
+router.get('/pel2/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -107,7 +107,7 @@ router.get('/api/pel2/get/:id', async (req, res) => {
 });
 
 //Peltier 3
-router.post('/api/pel3', async (req, res) => {
+router.post('/pel3', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -146,7 +146,7 @@ router.post('/api/pel3', async (req, res) => {
 })
 
 //get peltier3 status
-router.get('/api/pel3/get/:id', async (req, res) => {
+router.get('/pel3/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -154,7 +154,7 @@ router.get('/api/pel3/get/:id', async (req, res) => {
 });
 
 //Peltier 4
-router.post('/api/pel4', async (req, res) => {
+router.post('/pel4', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -193,7 +193,7 @@ router.post('/api/pel4', async (req, res) => {
 })
 
 //get peltier4 status
-router.get('/api/pel4/get/:id', async (req, res) => {
+router.get('/pel4/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -201,7 +201,7 @@ router.get('/api/pel4/get/:id', async (req, res) => {
 });
 
 //Peltier 5
-router.post('/api/pel5', async (req, res) => {
+router.post('/pel5', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -240,7 +240,7 @@ router.post('/api/pel5', async (req, res) => {
 })
 
 //get peltier5 status
-router.get('/api/pel5/get/:id', async (req, res) => {
+router.get('/pel5/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -248,7 +248,7 @@ router.get('/api/pel5/get/:id', async (req, res) => {
 });
 
 //Peltier 6
-router.post('/api/pel6', async (req, res) => {
+router.post('/pel6', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -287,7 +287,7 @@ router.post('/api/pel6', async (req, res) => {
 })
 
 //get peltier6 status
-router.get('/api/pel6/get/:id', async (req, res) => {
+router.get('/pel6/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -295,7 +295,7 @@ router.get('/api/pel6/get/:id', async (req, res) => {
 });
 
 //Peltier 7
-router.post('/api/pel7', async (req, res) => {
+router.post('/pel7', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -334,7 +334,7 @@ router.post('/api/pel7', async (req, res) => {
 })
 
 //get peltier7 status
-router.get('/api/pel7/get/:id', async (req, res) => {
+router.get('/pel7/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });
@@ -342,7 +342,7 @@ router.get('/api/pel7/get/:id', async (req, res) => {
 });
 
 // Peltier 8
-router.post('/api/pel8', async (req, res) => {
+router.post('/pel8', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
 
 	if (!peltierStatus || typeof peltierStatus !== 'string') {
@@ -381,7 +381,7 @@ router.post('/api/pel8', async (req, res) => {
 })
 
 //get peltier8 status
-router.get('/api/pel8/get/:id', async (req, res) => {
+router.get('/pel8/get/:id', async (req, res) => {
     const q = await peltier.findById({
         _id: req.params.id
     });

@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.Secret
 
 // Start User
 
-router.post('/api/change-password', async (req, res) => {
+router.post('/change-password', async (req, res) => {
 	const { token, newpassword: plainTextPassword } = req.body
 
 	if (!plainTextPassword || typeof plainTextPassword !== 'string') {
@@ -40,7 +40,7 @@ router.post('/api/change-password', async (req, res) => {
 	}
 })
 
-router.post('/api/login', async (req, res) => {
+router.post('/login', async (req, res) => {
 	const { email, username, password } = req.body
 	const user = await User.findOne({ email, username }).lean() 
 
@@ -66,7 +66,7 @@ router.post('/api/login', async (req, res) => {
 	res.json({ status: 'error', error: 'Invalid username/password' })
 })
 
-router.post('/api/register', async (req, res) => {
+router.post('/register', async (req, res) => {
 	const { email, username, password: plainTextPassword } = req.body
 
 	if (!email || typeof email !== 'string') {
@@ -109,7 +109,7 @@ router.post('/api/register', async (req, res) => {
 })
 
 //Get specific Contacts
-router.get('/api/user/get/:id', async (req, res) => {
+router.get('/user/get/:id', async (req, res) => {
     const q = await User.findById({
         _id: req.params.id
     });

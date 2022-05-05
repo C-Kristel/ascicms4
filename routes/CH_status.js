@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.Secret
 
 // Start Coolhouse Status
 
-router.post('/api/chstatus', async (req, res) => {
+router.post('/new', async (req, res) => {
 	const { ch_temp, r_temp, water_level, soil_temp, soil_moisture, pH_lvl, humidity_lvl, date } = req.body
 	//const coolhouse = await Coolhouse.findOne({ ch_temp, r_temp, water_level, soil_temp, soil_moisture, pH_lvl, humidity_lvl, date }).lean() 
 
@@ -59,7 +59,7 @@ router.post('/api/chstatus', async (req, res) => {
 })
 
 //Get all routes
-router.get('/api/chstatus/all', async (req, res) => {
+router.get('/all', async (req, res) => {
     const findCoolhouseStatus = await Coolhouse.find()
     if (findCoolhouseStatus != 0) {
         res.json(findCoolhouseStatus);
@@ -70,7 +70,7 @@ router.get('/api/chstatus/all', async (req, res) => {
 });
 
 //Get specific Coolhouse status by id
-router.get('/api/chstatus/get/:id', async (req, res) => {
+router.get('/get/:id', async (req, res) => {
     const q = await Coolhouse.findById({
         _id: req.params.id
     });
@@ -78,15 +78,11 @@ router.get('/api/chstatus/get/:id', async (req, res) => {
 });
 
 //Delete coolhouse status
-router.delete('/api/chstatus/delete/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     const result = await Coolhouse.findByIdAndDelete({
         _id: req.params.id
     });
     res.json(result);
 });
 
-//router.get('/api/chstatus', (req,res) => {
-//    res.send(Coolhouse);
-//});
-// End Coolhouse status
 module.exports = router;

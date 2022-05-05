@@ -13,7 +13,7 @@ router.get('/all', async (req, res) => {
 });
 
 // Vent1
-router.post('/api/vent1', async (req, res) => {
+router.post('/vent1', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -41,7 +41,7 @@ router.post('/api/vent1', async (req, res) => {
 })
 
 //get vent 1 status
-router.get('/api/vent1/get/:id', async (req, res) => {
+router.get('/vent1/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -49,7 +49,7 @@ router.get('/api/vent1/get/:id', async (req, res) => {
 });
 
 // Vent2
-router.post('/api/vent2', async (req, res) => {
+router.post('/vent2', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -77,7 +77,7 @@ router.post('/api/vent2', async (req, res) => {
 })
 
 //get vent 2 status
-router.get('/api/vent2/get/:id', async (req, res) => {
+router.get('/vent2/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -85,7 +85,7 @@ router.get('/api/vent2/get/:id', async (req, res) => {
 });
 
 //Vent3
-router.post('/api/vent3', async (req, res) => {
+router.post('/vent3', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -113,7 +113,7 @@ router.post('/api/vent3', async (req, res) => {
 })
 
 //get vent 3 status
-router.get('/api/vent3/get/:id', async (req, res) => {
+router.get('/vent3/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -121,7 +121,7 @@ router.get('/api/vent3/get/:id', async (req, res) => {
 });
 
 //Vent4
-router.post('/api/vent4', async (req, res) => {
+router.post('/vent4', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -149,7 +149,7 @@ router.post('/api/vent4', async (req, res) => {
 })
 
 //get vent 4 status
-router.get('/api/vent4/get/:id', async (req, res) => {
+router.get('/vent4/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -157,7 +157,7 @@ router.get('/api/vent4/get/:id', async (req, res) => {
 });
 
 //Vent5
-router.post('/api/vent5', async (req, res) => {
+router.post('/vent5', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -185,7 +185,7 @@ router.post('/api/vent5', async (req, res) => {
 })
 
 //get vent 5 status
-router.get('/api/vent5/get/:id', async (req, res) => {
+router.get('/vent5/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -193,7 +193,7 @@ router.get('/api/vent5/get/:id', async (req, res) => {
 });
 
 //Vent6
-router.post('/api/vent6', async (req, res) => {
+router.post('/vent6', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -221,7 +221,7 @@ router.post('/api/vent6', async (req, res) => {
 })
 
 //get vent 6 status
-router.get('/api/vent6/get/:id', async (req, res) => {
+router.get('/vent6/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -229,7 +229,7 @@ router.get('/api/vent6/get/:id', async (req, res) => {
 });
 
 //Vent7
-router.post('/api/vent7', async (req, res) => {
+router.post('/vent7', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -257,7 +257,7 @@ router.post('/api/vent7', async (req, res) => {
 })
 
 //get vent 7 status
-router.get('/api/vent7/get/:id', async (req, res) => {
+router.get('/vent7/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -265,7 +265,7 @@ router.get('/api/vent7/get/:id', async (req, res) => {
 });
 
 //Vent8
-router.post('/api/vent8', async (req, res) => {
+router.post('/vent8', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -293,7 +293,7 @@ router.post('/api/vent8', async (req, res) => {
 })
 
 //get vent 8 status
-router.get('/api/vent8/get/:id', async (req, res) => {
+router.get('/vent8/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -301,7 +301,7 @@ router.get('/api/vent8/get/:id', async (req, res) => {
 });
 
 //Vent9
-router.post('/api/vent9', async (req, res) => {
+router.post('/vent9', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -329,7 +329,7 @@ router.post('/api/vent9', async (req, res) => {
 })
 
 //get vent 9 status
-router.get('/api/vent9/get/:id', async (req, res) => {
+router.get('/vent9/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -337,7 +337,7 @@ router.get('/api/vent9/get/:id', async (req, res) => {
 });
 
 //Vent10
-router.post('/api/vent10', async (req, res) => {
+router.post('/vent10', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -365,7 +365,7 @@ router.post('/api/vent10', async (req, res) => {
 })
 
 //get vent 10 status
-router.get('/api/vent10/get/:id', async (req, res) => {
+router.get('/vent10/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -373,7 +373,7 @@ router.get('/api/vent10/get/:id', async (req, res) => {
 });
 
 //Vent11
-router.post('/api/vent11', async (req, res) => {
+router.post('/vent11', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -401,7 +401,7 @@ router.post('/api/vent11', async (req, res) => {
 })
 
 //get vent 11 status
-router.get('/api/vent11/get/:id', async (req, res) => {
+router.get('/vent11/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });
@@ -409,7 +409,7 @@ router.get('/api/vent11/get/:id', async (req, res) => {
 });
 
 //Vent12
-router.post('/api/vent12', async (req, res) => {
+router.post('/vent12', async (req, res) => {
 	const { ventFans, ventNum } = req.body
 
 	if (!ventFans || typeof ventFans !== 'string') {
@@ -437,7 +437,7 @@ router.post('/api/vent12', async (req, res) => {
 })
 
 //get vent 12 status
-router.get('/api/vent12/get/:id', async (req, res) => {
+router.get('/vent12/get/:id', async (req, res) => {
     const q = await vent.findById({
         _id: req.params.id
     });

@@ -12,7 +12,7 @@ router.get('/all', async (req, res) => {
 
 });
 // LED1
-router.post('/api/led1', async (req, res) => {
+router.post('/led1', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
 	if (!ledStatus || typeof ledStatus !== 'boolean') {
@@ -41,7 +41,7 @@ router.post('/api/led1', async (req, res) => {
 })
 
 //get LED1 status
-router.get('/api/led1/get/:id', async (req, res) => {
+router.get('/led1/get/:id', async (req, res) => {
     const q = await led.findById({
         _id: req.params.id
     });
@@ -49,7 +49,7 @@ router.get('/api/led1/get/:id', async (req, res) => {
 });
 
 //LED2
-router.post('/api/led2', async (req, res) => {
+router.post('/led2', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
 	if (!ledStatus || typeof ledStatus !== 'boolean') {
@@ -78,7 +78,7 @@ router.post('/api/led2', async (req, res) => {
 })
 
 //get LED2 status
-router.get('/api/led2/get/:id', async (req, res) => {
+router.get('/led2/get/:id', async (req, res) => {
     const q = await led.findById({
         _id: req.params.id
     });
@@ -86,7 +86,7 @@ router.get('/api/led2/get/:id', async (req, res) => {
 });
 
 //LED3
-router.post('/api/led3', async (req, res) => {
+router.post('/led3', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
 	if (!ledStatus || typeof ledStatus !== 'boolean') {
@@ -115,7 +115,7 @@ router.post('/api/led3', async (req, res) => {
 })
 
 //get LED3 status
-router.get('/api/led3/get/:id', async (req, res) => {
+router.get('/led3/get/:id', async (req, res) => {
     const q = await led.findById({
         _id: req.params.id
     });
@@ -123,7 +123,7 @@ router.get('/api/led3/get/:id', async (req, res) => {
 });
 
 //LED4
-router.post('/api/led4', async (req, res) => {
+router.post('/led4', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
 	if (!ledStatus || typeof ledStatus !== 'boolean') {
@@ -152,7 +152,7 @@ router.post('/api/led4', async (req, res) => {
 })
 
 //get LED4 status
-router.get('/api/led4/get/:id', async (req, res) => {
+router.get('/led4/get/:id', async (req, res) => {
     const q = await led.findById({
         _id: req.params.id
     });

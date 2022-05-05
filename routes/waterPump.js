@@ -2,7 +2,7 @@ const router = require('express').Router();
 const pump = require('../model/waterPump')
 
 // Water Pump Status
-router.post('/api/water', async (req, res) => {
+router.post('/new', async (req, res) => {
 	const { waterPump } = req.body
 
 	if (!waterPump || typeof waterPump !== 'string') {
@@ -25,7 +25,7 @@ router.post('/api/water', async (req, res) => {
 })
 
 //Get all routes
-router.get('/api/water/all', async (req, res) => {
+router.get('/all', async (req, res) => {
     const findWaterPumpStatus = await pump.find()
     if (findWaterPumpStatus != 0) {
         res.json(findWaterPumpStatus);

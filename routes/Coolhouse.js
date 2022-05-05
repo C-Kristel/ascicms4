@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Activestat = require('../model/Coolhouse')
 
 // Start Coolhouse Active Status
-router.post('/api/Coolhouse', async (req, res) => {
+router.post('/Coolhouse', async (req, res) => {
 	const { ActiveStatus } = req.body
 
 	if (!ActiveStatus || typeof ActiveStatus !== 'string') {
@@ -26,7 +26,7 @@ router.post('/api/Coolhouse', async (req, res) => {
 })
 
 //Get all routes
-router.get('/api/Coolhouse/all', async (req, res) => {
+router.get('/all', async (req, res) => {
     const findCoolhouseActiveStatus = await Activestat.find()
     if (findCoolhouseActiveStatus != 0) {
         res.json(findCoolhouseActiveStatus);
@@ -37,7 +37,7 @@ router.get('/api/Coolhouse/all', async (req, res) => {
 });
 
 //Get specific Contacts
-router.get('/api/Coolhouse/get/:id', async (req, res) => {
+router.get('/get/:id', async (req, res) => {
     const q = await Activestat.findById({
         _id: req.params.id
     });
@@ -45,7 +45,7 @@ router.get('/api/Coolhouse/get/:id', async (req, res) => {
 });
 
 //Delete Contact
-router.delete('/api/Coolhouse/delete/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     const result = await Activestat.findByIdAndDelete({
         _id: req.params.id
     });
