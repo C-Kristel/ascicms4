@@ -37,12 +37,12 @@ app.use(express.json());
 
 //route middlewares
 app.use('/', UserRoute);
-app.use('/', chRoute);
-app.use('/', chActiveStatus);
-app.use('/', ledStatus);
-app.use('/', peltierStatus);
-app.use('/', vent);
-app.use('/', waterPump);
+app.use('/ch', chRoute);
+app.use('/chact', chActiveStatus);
+app.use('/led', ledStatus);
+app.use('/pel', peltierStatus);
+app.use('/vent', vent);
+app.use('/wp', waterPump);
 app.use(bodyParser.json())
 
 app.listen(8080, () => {
