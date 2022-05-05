@@ -5,7 +5,7 @@ const PlantSchema = new mongoose.Schema(
 		plantNum: {
             type: String,
             required: true
-        }
+        },
         plantHeight: { 
             type: [String], 
             required: true
@@ -17,7 +17,7 @@ const PlantSchema = new mongoose.Schema(
 		leafGreenness: { 
             type: [String], 
             required: true 
-        }
+        },
         date: {
             type: Date,
             default: Date.now
