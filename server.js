@@ -24,7 +24,8 @@ const peltierStatus = require('./routes/peltier');
 const vent = require('./routes/vent');
 const waterPump = require('./routes/waterPump');
 const plants = require('./routes/plant');
-const params = require('./routes/parameters')
+const params = require('./routes/parameters');
+const pH = require('./routes/PH_lvl');
 dotenv.config();
 
 //app.use('/', express.static(path.join(__dirname, 'static')))
@@ -43,6 +44,7 @@ app.use('/vent', vent);
 app.use('/wp', waterPump);
 app.use('/plant', plants);
 app.use('/params', params);
+app.use('/pH', pH);
 
 app.use(bodyParser.json())
 
