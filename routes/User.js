@@ -2,6 +2,10 @@ const router = require('express').Router();
 const User = require('../model/user')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
+const {
+    registerValidation,
+    loginValidation
+} = require('../validation');
 const JWT_SECRET = process.env.Secret
 
 // Start User
@@ -40,7 +44,7 @@ router.post('/change-password', async (req, res) => {
 	}
 })
 
-router.post('/login', async (req, res) => {
+/*router.post('/login', async (req, res) => {
 	const { username, email, password } = req.body
 	const user = await User.findOne({ email }).lean() 
 
@@ -64,6 +68,32 @@ router.post('/login', async (req, res) => {
 
 	res.json({ status: 'error', error: 'Invalid username/password' })
 })
+*/
+
+//LOGIN
+router.post('/login', async (req, res) => {
+    //VALIDATION OF DATA 
+    const {
+        error
+    } = loginValidation(req.body);
+    if (error) return res.status(400).json({ 'error': error.details[0].message });
+    //CHECK IF EMAIL EXISTS
+    const user = await User.findOne({
+        email: req.body.email
+    });
+    if (!user) return res.status(400).json({ 'error': 'Email/Password is wrong!' });
+    //CHECK IF PASSWORD IS CORRECT
+    const validPass = await bcrypt.compare(req.body.password, user.password);
+    if (!validPass) return res.status(400).json({ 'error': 'Email/Password is wrong!' });
+
+    //CREATE AND ASSIGN TOKEN
+    const token = jwt.sign({
+        id: user._id,
+		email: user.email
+    }, JWT_SECRET);
+    res.status(200).json({ 'auth-token': token }); 
+
+});
 
 router.post('/register', async (req, res) => {
 	const { email, username, password: plainTextPassword } = req.body
