@@ -91,7 +91,7 @@ router.post('/login', async (req, res) => {
         id: user._id,
 		email: user.email
     }, JWT_SECRET);
-    res.status(200).json({ 'auth-token': token }); 
+    return res.status(200).json({ 'auth-token': token, message: user.username }); 
 
 });
 
