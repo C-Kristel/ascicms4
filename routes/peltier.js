@@ -390,3 +390,64 @@ router.get('/pel8/get/:id', async (req, res) => {
 
 
 module.exports = router;
+/*
+device1 (PELTIER 1)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "ON"}
+
+device2 (PELTIER 2)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "ON"}
+
+device3 (MINI FAN 1)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "ON"}
+
+device4 (MINI FAN 2)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "ON"}
+
+device5 (LED 1) 
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "OFF"}
+
+device6 (LED 2) 
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "OFF"}
+
+device7 (OUT HEATSINK FANS)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "ON"}
+
+device8 (WATER PUMP)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "OFF"}
+
+Parameters:
+	start_time: "00:00" //FORMAT IN STRING HH:mm
+	end_time: "00:00" //FORMAT IN STRING HH:mm
+	duration: "120" //FORMAT IN STRING mm 120 mins
+	target_temp //<< remove
+	override: "ON" //STRING
+	
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST INITIAL DATA : {start_time: "08:30", end_time: "16:30", duration: "480", override: "OFF"}
+
+*/
