@@ -91,7 +91,7 @@ router.patch('/update/:id', async (req, res) => {
 
     //UPDATING mini fan
     try {
-        const miniFan = await miniFan.updateOne({
+        const miniFan = await miniFans.updateOne({
             _id: req.params.id
         }, {
             $set: {

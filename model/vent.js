@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const VentSchema = new mongoose.Schema(
 	{
-		ventFans: { 
+		ventStatus: { 
 			type: String, 
 			required: true },
 		ventNum: {

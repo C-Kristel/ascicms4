@@ -24,6 +24,24 @@ router.post('/new', async (req, res) => {
 	res.json({ status: 'ok' })
 })
 
+//Update Water Pump Status
+router.patch('/update/:id', verify, async (req, res) => {
+
+    //UPDATING STATUS
+    try {
+        const patch = await pump.updateOne({
+            _id: req.params.id
+        }, {
+            $set: {
+				waterPump: req.body.waterPump
+            }
+        });
+        res.json({ 'message': 'Water Pump Status Updated' });
+    } catch (err) {
+        res.status(400).json({ 'error': err });
+    }
+});
+
 //Get all routes
 router.get('/all', async (req, res) => {
     const findWaterPumpStatus = await pump.find()

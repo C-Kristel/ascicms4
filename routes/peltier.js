@@ -87,11 +87,9 @@ router.get('/pel2/get/:id', async (req, res) => {
 
 //Update Status
 router.patch('/update/:id', async (req, res) => {
-	const peltier = req.body
-
     //UPDATING CONTACT
     try {
-        const peltier = await peltier.updateOne({
+        const pel = await peltier.updateOne({
             _id: req.params.id
         }, {
             $set: {

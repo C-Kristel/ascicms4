@@ -27,6 +27,7 @@ const plants = require('./routes/plant');
 const params = require('./routes/parameters');
 const pH = require('./routes/PH_lvl');
 const timeData = require('./routes/timeDataRoute');
+const miniFans = require('./routes/miniFans');
 dotenv.config();
 
 //app.use('/', express.static(path.join(__dirname, 'static')))
@@ -47,6 +48,7 @@ app.use('/plant', plants);
 app.use('/params', params);
 app.use('/pH', pH);
 app.use('/timedata', timeData);
+app.use('/mf', miniFans);
 app.use(bodyParser.json())
 
 app.listen(port, () => {
