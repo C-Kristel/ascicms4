@@ -7,7 +7,6 @@ const CoolhouseSchema = new mongoose.Schema(
         water_level: {type: String, required: true},
 		soil_temp: {type: String, required: true},
         soil_moisture: {type: String, required: true},
-        //pH_lvl: {type: String, required: true},
         humidity_lvl: {type: String, required: true},
         date: {type: Date, default: Date.now, required: true},
         time: {type: String, required: false},
