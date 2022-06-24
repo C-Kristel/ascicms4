@@ -36,7 +36,7 @@ router.get('/all', async (req, res) => {
 
 });
 
-//Get specific Contacts
+//Get specific
 router.get('/get/:id', async (req, res) => {
     const q = await Activestat.findById({
         _id: req.params.id
@@ -44,7 +44,7 @@ router.get('/get/:id', async (req, res) => {
     res.json(q);
 });
 
-//Delete Contact
+//Delete
 router.delete('/delete/:id', async (req, res) => {
     const result = await Activestat.findByIdAndDelete({
         _id: req.params.id

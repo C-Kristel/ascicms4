@@ -444,3 +444,10 @@ router.get('/vent12/get/:id', async (req, res) => {
     res.json(q);
 });
 module.exports = router;
+
+/*device7 (OUT HEATSINK FANS)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "ON"}
+	*/

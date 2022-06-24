@@ -37,3 +37,9 @@ router.get('/all', async (req, res) => {
 
 
 module.exports = router;
+
+/* device8 (WATER PUMP)
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "OFF"}*/

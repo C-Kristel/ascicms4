@@ -11,7 +11,9 @@ router.get('/all', async (req, res) => {
     }
 
 });
-// LED1
+
+
+//LED1
 router.post('/led1', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
@@ -85,77 +87,36 @@ router.get('/led2/get/:id', async (req, res) => {
     res.json(q);
 });
 
-//LED3
-router.post('/led3', async (req, res) => {
-	const { ledStatus, ledNum } = req.body
+//Update LED Status
+router.patch('/update/:id', verify, async (req, res) => {
 
-	if (!ledStatus || typeof ledStatus !== 'boolean') {
-		return res.json({ status: 'error', error: 'Invalid' })
-	}
-	
-	if (!ledNum || typeof ledNum !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid Number' })
-	}
-
-
-	try {
-		const response = await led.create({
-			ledStatus,
-            ledNum
-		})
-		console.log('Success: ', response)
-	} catch (error) {
-		if (error.code === 400) {
-			return res.json({ status: 'error', error: 'Error' })
-		}
-		throw error
-	}
-
-	res.json({ status: 'ok' })
-})
-
-//get LED3 status
-router.get('/led3/get/:id', async (req, res) => {
-    const q = await led.findById({
-        _id: req.params.id
-    });
-    res.json(q);
-});
-
-//LED4
-router.post('/led4', async (req, res) => {
-	const { ledStatus, ledNum } = req.body
-
-	if (!ledStatus || typeof ledStatus !== 'boolean') {
-		return res.json({ status: 'error', error: 'Invalid' })
-	}
-	
-	if (!ledNum || typeof ledNum !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid Number' })
-	}
-
-
-	try {
-		const response = await led.create({
-			ledStatus,
-            ledNum
-		})
-		console.log('Success: ', response)
-	} catch (error) {
-		if (error.code === 400) {
-			return res.json({ status: 'error', error: 'Error' })
-		}
-		throw error
-	}
-
-	res.json({ status: 'ok' })
-})
-
-//get LED4 status
-router.get('/led4/get/:id', async (req, res) => {
-    const q = await led.findById({
-        _id: req.params.id
-    });
-    res.json(q);
+    //UPDATING STATUS
+    try {
+        const patch = await led.updateOne({
+            _id: req.params.id
+        }, {
+            $set: {
+				ledNum: req.body.ledNum,
+                ledStatus: req.body.ledStatus
+            }
+        });
+        res.json({ 'message': 'LED Status Updated' });
+    } catch (err) {
+        res.status(400).json({ 'error': err });
+    }
 });
 module.exports = router;
+
+/* device5 (LED 1) 
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "OFF"}
+
+device6 (LED 2) 
+	status: "ON"
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST >> Initial data {status: "OFF"}
+
+	*/

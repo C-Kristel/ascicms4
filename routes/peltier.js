@@ -59,6 +59,26 @@ router.get('/pel1/get/:id', async (req, res) => {
     res.json(q);
 });
 
+//Update Status
+router.patch('/update/:id', async (req, res) => {
+	const peltier = req.body
+
+    //UPDATING CONTACT
+    try {
+        const peltier = await peltier.updateOne({
+            _id: req.params.id
+        }, {
+            $set: {
+                peltierNum: req.body.peltierNum,
+                peltierStatus: req.body.peltierStatus
+            }
+        });
+        res.json({ 'message': 'Peltier Status Updated' });
+    } catch (err) {
+        res.status(400).json({ 'error': err });
+    }
+});
+
 //Peltier 2
 router.post('/pel2', async (req, res) => {
 	const { peltierStatus, peltierNum, miniFans, miniFanNum } = req.body
@@ -414,40 +434,5 @@ device4 (MINI FAN 2)
 	//PATCH >> UPDATES Initial data NO NEW data added
 	//GET ALL
 	//POST >> Initial data {status: "ON"}
-
-device5 (LED 1) 
-	status: "ON"
-	//PATCH >> UPDATES Initial data NO NEW data added
-	//GET ALL
-	//POST >> Initial data {status: "OFF"}
-
-device6 (LED 2) 
-	status: "ON"
-	//PATCH >> UPDATES Initial data NO NEW data added
-	//GET ALL
-	//POST >> Initial data {status: "OFF"}
-
-device7 (OUT HEATSINK FANS)
-	status: "ON"
-	//PATCH >> UPDATES Initial data NO NEW data added
-	//GET ALL
-	//POST >> Initial data {status: "ON"}
-
-device8 (WATER PUMP)
-	status: "ON"
-	//PATCH >> UPDATES Initial data NO NEW data added
-	//GET ALL
-	//POST >> Initial data {status: "OFF"}
-
-Parameters:
-	start_time: "00:00" //FORMAT IN STRING HH:mm
-	end_time: "00:00" //FORMAT IN STRING HH:mm
-	duration: "120" //FORMAT IN STRING mm 120 mins
-	target_temp //<< remove
-	override: "ON" //STRING
-	
-	//PATCH >> UPDATES Initial data NO NEW data added
-	//GET ALL
-	//POST INITIAL DATA : {start_time: "08:30", end_time: "16:30", duration: "480", override: "OFF"}
 
 */

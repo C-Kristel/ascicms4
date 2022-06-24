@@ -8,8 +8,6 @@ const JWT_SECRET = process.env.Secret
 
 router.post('/new', async (req, res) => {
 	const { ch_temp, r_temp, water_level, soil_temp, soil_moisture, humidity_lvl, date } = req.body
-	//const coolhouse = await Coolhouse.findOne({ ch_temp, r_temp, water_level, soil_temp, soil_moisture, pH_lvl, humidity_lvl, date }).lean() 
-
 
 	if (!ch_temp || typeof ch_temp !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid temperature' })
@@ -29,9 +27,6 @@ router.post('/new', async (req, res) => {
     if (!soil_moisture || typeof soil_moisture !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid soil moisture' })
 	}
-    /*if (!pH_lvl || typeof pH_lvl !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid pH level' })
-	} */
     if (!humidity_lvl || typeof humidity_lvl !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid humidity level' })
 	}

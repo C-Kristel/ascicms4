@@ -13,7 +13,7 @@ router.get('/all', async (req, res) => {
 });
 
 router.post('/new', async (req, res) => {
-	const { start_time, end_time, duration, target_temp, override, date } = req.body
+	const { start_time, end_time, duration, override, date } = req.body
 
 	if (!start_time || typeof start_time !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid' })
@@ -27,10 +27,6 @@ router.post('/new', async (req, res) => {
 		return res.json({ status: 'error', error: 'Invalid' })
 	}
 
-    if (!target_temp || typeof target_temp !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid' })
-	}
-
     if (!override || typeof override !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid' })
 	}
@@ -40,7 +36,6 @@ router.post('/new', async (req, res) => {
 			start_time,
             end_time,
             duration,
-            target_temp,
             override
 		})
 		console.log("Parameters logged successfully: ", response)
@@ -101,5 +96,17 @@ router.patch('/update/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+/*Parameters:
+	start_time: "00:00" //FORMAT IN STRING HH:mm
+	end_time: "00:00" //FORMAT IN STRING HH:mm
+	duration: "120" //FORMAT IN STRING mm 120 mins
+	target_temp //<< remove
+	override: "ON" //STRING
+	
+	//PATCH >> UPDATES Initial data NO NEW data added
+	//GET ALL
+	//POST INITIAL DATA : {start_time: "08:30", end_time: "16:30", duration: "480", override: "OFF"}
+    */
 
 
