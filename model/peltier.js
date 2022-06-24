@@ -9,14 +9,6 @@ const PeltierSchema = new mongoose.Schema(
 			type: String,
 			required:true
 		},
-        miniFans: {
-            type: String,
-            required: true
-        },
-        miniFanNum: {
-            type: String,
-			required:true
-        }
 	},
 	{ collection: 'PeltierStatus' }
 )
