@@ -61,7 +61,7 @@ router.patch('/update/:id', verify, async (req, res) => {
                 ventStatus: req.body.ventStatus
             }
         });
-        res.json({ 'message': 'LED Status Updated' });
+        res.json({ 'message': 'Vent Status Updated' });
     } catch (err) {
         res.status(400).json({ 'error': err });
     }
