@@ -57,4 +57,22 @@ router.delete('/delete/:id', async (req, res) => {
     res.json(result);
 });
 
+//Update pH Status
+router.patch('/update/:id', async (req, res) => {
+
+    //UPDATING STATUS
+    try {
+        const patch = await SoilpH.updateOne({
+            _id: req.params.id
+        }, {
+            $set: {
+				pH_lvl: req.body.pH_lvl
+            }
+        });
+        res.json({ 'message': 'pH Level Updated' });
+    } catch (err) {
+        res.status(400).json({ 'error': err });
+    }
+});
+
 module.exports = router;
