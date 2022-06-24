@@ -88,7 +88,7 @@ router.get('/led2/get/:id', async (req, res) => {
 });
 
 //Update LED Status
-router.patch('/update/:id', verify, async (req, res) => {
+router.patch('/update/:id', async (req, res) => {
 
     //UPDATING STATUS
     try {

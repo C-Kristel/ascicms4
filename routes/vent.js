@@ -49,7 +49,7 @@ router.get('/vent1/get/:id', async (req, res) => {
 });
 
 //Update vent Status
-router.patch('/update/:id', verify, async (req, res) => {
+router.patch('/update/:id', async (req, res) => {
 
     //UPDATING STATUS
     try {

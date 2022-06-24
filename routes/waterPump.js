@@ -25,7 +25,7 @@ router.post('/new', async (req, res) => {
 })
 
 //Update Water Pump Status
-router.patch('/update/:id', verify, async (req, res) => {
+router.patch('/update/:id', async (req, res) => {
 
     //UPDATING STATUS
     try {
