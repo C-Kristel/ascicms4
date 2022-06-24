@@ -17,7 +17,7 @@ router.get('/all', async (req, res) => {
 router.post('/led1', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
-	if (!ledStatus || typeof ledStatus !== 'boolean') {
+	if (!ledStatus || typeof ledStatus !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid' })
 	}
 	
@@ -54,7 +54,7 @@ router.get('/led1/get/:id', async (req, res) => {
 router.post('/led2', async (req, res) => {
 	const { ledStatus, ledNum } = req.body
 
-	if (!ledStatus || typeof ledStatus !== 'boolean') {
+	if (!ledStatus || typeof ledStatus !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid' })
 	}
 	
