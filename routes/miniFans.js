@@ -15,7 +15,7 @@ router.get('/all', async (req, res) => {
 router.post('/mf1', async (req, res) => {
 	const { miniFanStatus, miniFanNum } = req.body
 
-    if (!miniFanStatus || typeof miniFans !== 'string') {
+    if (!miniFanStatus || typeof miniFanStatus !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid' })
 	}
 
