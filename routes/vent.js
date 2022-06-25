@@ -16,7 +16,7 @@ router.get('/all', async (req, res) => {
 router.post('/vent1', async (req, res) => {
 	const { ventStatus, ventNum } = req.body
 
-	if (!ventStatus || typeof ventFans !== 'string') {
+	if (!ventStatus || typeof ventStatus !== 'string') {
 		return res.json({ status: 'error', error: 'Invalid' })
 	}
 	
